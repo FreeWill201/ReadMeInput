@@ -1,4 +1,3 @@
-// TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
 
@@ -30,9 +29,10 @@ inquirer
       message: "Explain how application is used",
     },
     {
-      type: "input",
+      type: "list", // Use list instead of input to give a list of license options
       name: "License",
-      message: "Type of License",
+      message: "Choose a license for your project:",
+      choices: ["MIT", "Apache", "GPL"],
     },
     {
       type: "input",
@@ -83,7 +83,11 @@ inquirer
         break;
     }
 
-    const readmeContent = `# ${answers.title}
+    const readmeContent = `## ${answers.title}
+
+  ## License Badge
+
+  ${licenseBadge}  
   
   ## Description
 
@@ -103,7 +107,7 @@ inquirer
   
   ## License
   
-  ${answers.License}
+  ${licenseNotice} 
   
   ## Contributing
   
@@ -136,3 +140,8 @@ function init() {}
 
 // Function call to initialize app
 init();
+
+// License Badge and Notice, check
+
+// Need Github Username interactivity, Need email address interactivity,
+// Need table of contents interactivity. See BTCMP Spot Mode 9 project criteria
