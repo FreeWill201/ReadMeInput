@@ -2,7 +2,7 @@
 
   ## License Badge
 
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  // Include the license badge here
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
   
   ## Description
 
@@ -22,7 +22,7 @@
   
   ## License
   
-  This project is licensed under the MIT license. // License Notice from switch
+  This project is licensed under the MIT license. 
   
   ## Contributing
   
