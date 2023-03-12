@@ -1,5 +1,10 @@
+// Make sure to use word wrap to easily read all comments!
+// The below code, lines 3-4 establish variables that reference certain functionality
+
 const inquirer = require("inquirer");
 const fs = require("fs");
+
+// Lines 8-66 establish the paramters for the prompts and their functionality with regards to how they are written in the README.md
 
 inquirer
   .prompt([
@@ -61,6 +66,8 @@ inquirer
     },
   ])
   .then((answers) => {
+    // Lines 72-82 ensure the prompts are properly registering after entering the appropriate input through the CLI
+
     console.log(`Title: ${answers.title}`);
     console.log(`Description: ${answers.description}`);
     console.log(`Table Of Contents: ${answers.TableOfContents}`);
@@ -72,6 +79,8 @@ inquirer
     console.log(`Questions: ${answers.Questions}`);
     console.log(`Github Username: ${answers.Github}`);
     console.log(`Email: ${answers.Email}`);
+
+    // The below variable makes it so the answer to the Github prompt is attatched to a link that will access any Github Profile through the inputed Github Username
 
     const githubLink = `https://github.com/${answers.Github}`;
 
@@ -96,6 +105,8 @@ inquirer
         licenseNotice = "This project is licensed under the GPL v3 license.";
         break;
     }
+
+    // The below code, lines 111-162 make it so the markdown text is properly formatted and recorder to the written README.md file after answer the prompts through the CLI
 
     const readmeContent = `## ${answers.title}
 
@@ -150,6 +161,8 @@ inquirer
   
   `;
 
+    // This code below, lines 166-175 ensures a file, in this case a README.md file, is written
+
     writeToFile("README.md", readmeContent);
   });
 
@@ -160,22 +173,3 @@ function writeToFile(fileName, data) {
     console.log(`README file has been created!`);
   });
 }
-
-// TODO: Create an array of questions for user input
-const questions = [];
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
-
-// License Badge and Notice, check
-
-// Need Github Username interactivity, Need email address interactivity. check
-// Need table of contents interactivity. See BTCMP Spot Mode 9 project criteria.check
-// Need to make sure README.md file is properly written to Github Repo, not just a file.check
-
-// For Sunday 3/12/23: 1. Create video that explains the functionality of the code.check
-// 2. Make the comments accurate and concise and check to see what code can be
-// eliminated
