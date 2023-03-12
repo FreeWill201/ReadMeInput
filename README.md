@@ -1,5 +1,9 @@
 ## ReadMeInput
 
+## Link To Walkthrough Video
+
+https://app.vidcast.io/share/4aec7488-fc71-45fa-82f4-f015fcecc803
+
 ## Description 
 
 Repo includes functionality accesible through node, ran through VS Code that allows the User to create their own README.md file automatically after responding to prompts on Gitbash or Terminal depending on OS used. The User is prompted to record specified answers to specific sections in order to create a satisfactory README.md file.

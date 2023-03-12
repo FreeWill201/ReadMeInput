@@ -49,6 +49,16 @@ inquirer
       name: "Questions",
       message: "Remaining Questions here",
     },
+    {
+      type: "input",
+      name: "Github",
+      message: "What is your Github username?",
+    },
+    {
+      type: "input",
+      name: "Email",
+      message: "What is your Email Address?",
+    },
   ])
   .then((answers) => {
     console.log(`Title: ${answers.title}`);
@@ -60,6 +70,10 @@ inquirer
     console.log(`Contributors: ${answers.Contributors}`);
     console.log(`Tests: ${answers.Tests}`);
     console.log(`Questions: ${answers.Questions}`);
+    console.log(`Github Username: ${answers.Github}`);
+    console.log(`Email: ${answers.Email}`);
+
+    const githubLink = `https://github.com/${answers.Github}`;
 
     // Add the appropriate license badge and notice based on user input
     let licenseBadge;
@@ -85,7 +99,7 @@ inquirer
 
     const readmeContent = `## ${answers.title}
 
-  ## License Badge
+  ## License-Badge
 
   ${licenseBadge}  
   
@@ -96,6 +110,15 @@ inquirer
   ## Table of Contents
   
   ${answers.TableOfContents}
+
+  Alread existing Table Of Contents sections
+
+  1. [Installation](#installation)
+  2. [Usage](#usage)
+  3. [License](#license-badge)
+  4. [Contributing](#contributing)
+  5. [Tests](#tests)
+  6. [Questions](#questions)
   
   ## Installation
   
@@ -119,7 +142,13 @@ inquirer
   
   ## Questions
   
-  ${answers.Questions}`;
+  Questions asked: ${answers.Questions}?
+
+  Check out my other projects on [Github](${githubLink})!  
+
+  If you have any questions, feel free to contact me at [${answers.Email}](mailto:${answers.Email})!
+  
+  `;
 
     writeToFile("README.md", readmeContent);
   });
@@ -143,6 +172,10 @@ init();
 
 // License Badge and Notice, check
 
-// Need Github Username interactivity, Need email address interactivity,
-// Need table of contents interactivity. See BTCMP Spot Mode 9 project criteria
-// Need to make sure README.md file is properly written to Github Repo, not just a file
+// Need Github Username interactivity, Need email address interactivity. check
+// Need table of contents interactivity. See BTCMP Spot Mode 9 project criteria.check
+// Need to make sure README.md file is properly written to Github Repo, not just a file.check
+
+// For Sunday 3/12/23: 1. Create video that explains the functionality of the code.check
+// 2. Make the comments accurate and concise and check to see what code can be
+// eliminated
